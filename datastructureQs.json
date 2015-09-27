@@ -3,6 +3,8 @@
         ["FILO", "FIFO", "LILO", "LIFO or FILO", "LIFO or FILO"],
     "Can linked list be implemented using arrays?":
         ["Yes", "No", "Yes"],
+    "On which principle does queue work?":
+        ["FILO", "FIFO", "LILO", "Both a and b above", "FIFO"],
     "AVL trees have a faster __________":
         ["Insertion", "Deletion", "Updation", "Retrieval", "Retrieval"],
     "The time required in best case for search operation in binary tree is":
@@ -11,6 +13,12 @@
         ["Yes", "No", "Yes"],
     "A tree cannot contain cycles.":
         ["False", "True", "True"],
+    "Breadth First search is used in":
+        ["Binary trees", "Stacks", "Graphs", "Both a and c above", "Both a and c above"],
+    "In graphs, A hyperedge is an edge that is allowed to take on any number of _____________":
+        ["Vertices", "edges", "both a and b above", "labels", "edges"],
+    "An empty list is the one which has no":
+        ["nodes", "data", "both a and b above", "address", "both a and b above"],
     "Key value pair is usually seen in":
         ["Hash tables", "Heaps", "Both a and b", "Skip list", "Hash tables"],
     "In _____________tree, the heights of the two child subtrees of any node differ by at most one":

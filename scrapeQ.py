@@ -25,7 +25,7 @@ for i in range(1,21):
 	# del answers[-2]
 	print(question)
 	print(answers)
-	if len(max(answers, key=len)) <= 15:
+	if len(max(answers, key=len)) <= 20:
 		answers = json.dumps(answers)
 		print("THIS IS GOING TO PRINT")
 		f.write('    "' + str(question[0]) + '":\n        ' + str(answers) + ",\n")
