@@ -28,7 +28,7 @@ public class ActualSplashActivity extends Activity {
 
         mainContainer.animate()
                 .translationY(-5000)
-                .setDuration(30000)
+                .setDuration(20000)
                 .setListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {

@@ -26,6 +26,7 @@
             android:layout_marginTop="-30dp"
             />
         <TextView
+            android:layout_marginTop="30dp"
             android:textColor="@android:color/white"
             android:layout_below="@id/sorryText"
             android:gravity="center_horizontal"

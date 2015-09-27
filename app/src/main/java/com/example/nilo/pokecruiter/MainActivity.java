@@ -174,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
             resetState();
             showQuestionAndAnswer();
         }else{
+            MediaPlayer wilhelm = MediaPlayer.create(this, R.raw.wilhelm_scream);
+            wilhelm.start();
             currentHealth -= 50;
             if(currentHealth > 0){
                 userhpfull.setImageResource(R.drawable.hp_half);
