@@ -4,7 +4,7 @@
     "Can linked list be implemented using arrays?":
         ["Yes", "No", "Yes"],
     "On which principle does queue work?":
-        ["FILO", "FIFO", "LILO", "Both a and b above", "FIFO"],
+        ["FILO", "FIFO", "LILO", "FILO and FIFO", "FIFO"],
     "AVL trees have a faster __________":
         ["Insertion", "Deletion", "Updation", "Retrieval", "Retrieval"],
     "The time required in best case for search operation in binary tree is":
@@ -14,13 +14,13 @@
     "A tree cannot contain cycles.":
         ["False", "True", "True"],
     "Breadth First search is used in":
-        ["Binary trees", "Stacks", "Graphs", "Both a and c above", "Both a and c above"],
+        ["Binary trees", "Stacks", "Graphs", "Binary trees and Graphs", "Binary trees and Graphs"],
     "In graphs, A hyperedge is an edge that is allowed to take on any number of _____________":
-        ["Vertices", "edges", "both a and b above", "labels", "edges"],
+        ["Vertices", "edges", "Vertices and edges", "labels", "edges"],
     "An empty list is the one which has no":
-        ["nodes", "data", "both a and b above", "address", "both a and b above"],
+        ["nodes", "data", "nodes and data", "address", "nodes and data"],
     "Key value pair is usually seen in":
-        ["Hash tables", "Heaps", "Both a and b", "Skip list", "Hash tables"],
+        ["Hash tables", "Heaps", "Hash tables and Heaps", "Skip list", "Hash tables"],
     "In _____________tree, the heights of the two child subtrees of any node differ by at most one":
         ["Binary tree", "Red black tree", "Splay tree", "AVL tree", "AVL tree"],
 }
