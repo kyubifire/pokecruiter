@@ -2,34 +2,54 @@ package com.example.nilo.pokecruiter;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.media.MediaPlayer;
+import android.os.Environment;
 import android.os.IBinder;
+import android.util.Log;
 
-import com.example.nilo.pokecruiter.R;
+import java.io.IOException;
 
 public class BackgroundSoundService extends Service {
     private static final String TAG = null;
     MediaPlayer player;
+
     public IBinder onBind(Intent arg0) {
 
         return null;
     }
+
     @Override
     public void onCreate() {
         super.onCreate();
-        player = MediaPlayer.create(this, R.raw.pokemonthemeacapella);
+        Log.d("service", "onCreate");
+        player = new MediaPlayer();
+        try {
+            player.setDataSource("file:///android_asset/pokemonthemeacapella.mp3");
+        } catch (IOException e) {
+            Log.d("Inside IOException",e.toString());
+            e.printStackTrace();
+        }
         player.setLooping(true); // Set looping
-        player.setVolume(100,100);
+        player.setVolume(100, 100);
 
     }
+
     public int onStartCommand(Intent intent, int flags, int startId) {
-        player.start();
+        Log.d("service", "onStartCommand");
+        try {
+            player.prepare();
+            player.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return 1;
     }
 
     public void onStart(Intent intent, int startId) {
         // TO DO
     }
+
     public IBinder onUnBind(Intent arg0) {
         // TO DO Auto-generated method
         return null;
@@ -38,9 +58,11 @@ public class BackgroundSoundService extends Service {
     public void onStop() {
 
     }
+
     public void onPause() {
 
     }
+
     @Override
     public void onDestroy() {
         player.stop();

@@ -2,7 +2,9 @@ package com.example.nilo.pokecruiter;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.media.MediaPlayer;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,14 +44,16 @@ public class MainActivity extends AppCompatActivity {
     private String correctAnswer;
     private int currentHealth;
 
+    MediaPlayer mySound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent svc=new Intent(this, BackgroundSoundService.class);
-        startService(svc);
-
+//        Intent svc=new Intent(this, BackgroundSoundService.class);
+//        startService(svc);
+        mySound = MediaPlayer.create(this, R.raw.pokemonthemeacapella);
+        mySound.start();
         currentHealth = 100;
 
         player = (ImageView) findViewById(R.id.player);
