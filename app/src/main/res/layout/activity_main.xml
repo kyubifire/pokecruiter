@@ -118,7 +118,8 @@
                android:id="@+id/answer1"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Something 1" />
+               android:text="Something 1"
+               android:onClick="checkAnswer"/>
            <TextView
                android:textSize="20dp"
                android:id="@+id/answer2"
@@ -126,7 +127,8 @@
                android:layout_height="wrap_content"
                android:layout_marginLeft="85dp"
                android:layout_toRightOf="@+id/answer1"
-               android:text="Something 2" />
+               android:text="Something 2"
+               android:onClick="checkAnswer"/>
            <TextView
                android:textSize="20dp"
                android:id="@+id/answer3"
@@ -134,7 +136,8 @@
                android:layout_height="wrap_content"
                android:layout_marginTop="12dp"
                android:layout_below="@+id/answer1"
-               android:text="Something 3" />
+               android:text="Something 3"
+               android:onClick="checkAnswer"/>
            <TextView
                android:textSize="20dp"
                android:id="@+id/answer4"
@@ -143,7 +146,8 @@
                android:layout_marginTop="12dp"
                android:layout_below="@+id/answer2"
                android:layout_alignLeft="@+id/answer2"
-               android:text="Something 4" />
+               android:text="Something 4"
+               android:onClick="checkAnswer"/>
 
 
        </RelativeLayout>
