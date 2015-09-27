@@ -18,11 +18,11 @@ for i in range(1,21):
 	answers = tree.xpath('//span[@class="answer"]/text()')
 	answers = [x[3:] for x in answers]
 
-
-	for i, answer in enumerate(answers):
-		if answer == answers[-1][16:]:
-			answers += str(i)
-	del answers[-2]
+	answers[-1] = answers[-1][16:]
+	# for i, answer in enumerate(answers):
+	# 	if answer == answers[-1][16:]:
+	# 		answers += str(i)
+	# del answers[-2]
 	answers = json.dumps(answers)
 	print(question)
 	print(answers)
