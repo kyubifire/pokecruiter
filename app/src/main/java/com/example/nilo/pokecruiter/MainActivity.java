@@ -173,9 +173,13 @@ public class MainActivity extends AppCompatActivity {
             if(currentHealth > 0){
                 userhpfull.setImageResource(R.drawable.hp_half);
                 showNotEffective(false);
+                resetState();
+                showQuestionAndAnswer();
             }else{
                 userhpfull.setImageResource(R.drawable.hp_empty);
                 showNotEffective(true);
+                resetState();
+                showQuestionAndAnswer();
             }
         }
     }
@@ -214,6 +218,21 @@ public class MainActivity extends AppCompatActivity {
 
                 if(isHealthZero){
                     showRightAnswerOnly();
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            resetState();
+                            try {
+                                showQuestionAndAnswer();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    },2000);
                 }
             }
         }, 2000);

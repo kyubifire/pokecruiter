@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(Please don't sue us Nintendo)"
+        android:text="(Use headphone for optimal experience)"
         android:textColor="@android:color/white"
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
