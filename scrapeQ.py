@@ -7,7 +7,7 @@ from lxml import html
 import requests
 import json
 
-f = open('datastructureQs.py', 'w')
+f = open('datastructureQs.json', 'w')
 f.write("{\n")
 
 for i in range(1,21):
