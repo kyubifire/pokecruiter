@@ -1,63 +1,17 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@color/pokemonDarkGrey"
-    >
+    android:weightSum="1">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </RelativeLayout>
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="0.5"
+        android:padding="10dp">
 
-<<<<<<< HEAD
-    <AbsoluteLayout
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_x="0dp"
-            android:layout_y="-27dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/background_top"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="0dp"
-            android:layout_y="165dp"
-            android:src="@drawable/background_bottom"/>
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_x="50dp"
-            android:layout_y="10dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/user"/>
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_x="240dp"
-            android:layout_y="-57dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/enemy"/>
-
-        <ImageView
-            android:layout_width="175dp"
-            android:layout_x="20dp"
-            android:layout_y="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/bubble_enemy"/>
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_x="175dp"
-            android:layout_y="105dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/bubble_user"/>
-=======
         <TextView
             android:id ="@+id/tvQuestion"
             android:maxLines = "256"
@@ -68,81 +22,83 @@
             />
     </LinearLayout>
 
-   <AbsoluteLayout
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_weight="0.5">
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
 
 
 
-       <!--<ImageView-->
-           <!--android:layout_width="match_parent"-->
-           <!--android:layout_height="wrap_content"-->
-           <!--android:src="@drawable/battletemplate_empty"/>-->
+        <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/battletemplate_empty"/>-->
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_x="0dp"
-           android:layout_y="-27dp"
-           android:layout_height="match_parent"
-           android:src="@drawable/background_top"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_x="0dp"
+            android:layout_y="-27dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_top"/>
 
-       <ImageView
-           android:id ="@+id/player"
-           android:layout_width="80dp"
-           android:layout_x="55dp"
-           android:layout_y="30dp"
-           android:layout_height="wrap_content"
-           android:src="@drawable/user"/>
+        <ImageView
+            android:id ="@+id/player"
+            android:layout_width="80dp"
+            android:layout_x="55dp"
+            android:layout_y="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user"/>
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_x="0dp"
-           android:layout_y="165dp"
-           android:layout_height="wrap_content"
-           android:src="@drawable/background_bottom"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_x="0dp"
+            android:layout_y="165dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/background_bottom"/>
 
-       <ImageView
-           android:id ="@+id/enemy"
-           android:layout_width="75dp"
-           android:layout_x="222dp"
-           android:layout_y="-40dp"
-           android:layout_height="wrap_content"
-           android:src="@drawable/enemy"/>
+        <ImageView
+            android:id ="@+id/enemy"
+            android:layout_width="75dp"
+            android:layout_x="222dp"
+            android:layout_y="-40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/enemy"/>
 
-       <ImageView
-           android:layout_width="170dp"
-           android:layout_x="10dp"
-           android:layout_y="20dp"
-           android:layout_height="wrap_content"
-           android:src="@drawable/bubble_enemy"/>
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_x="10dp"
+            android:layout_y="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bubble_enemy"/>
 
-       <ImageView
-           android:layout_width="170dp"
-           android:layout_x="185dp"
-           android:layout_y="115dp"
-           android:layout_height="wrap_content"
-           android:src="@drawable/bubble_user"/>
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_x="185dp"
+            android:layout_y="115dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bubble_user"/>
 
-       <ImageView
-           android:layout_width="140dp"
-           android:layout_x="205dp"
-           android:layout_y="145dp"
-           android:layout_height="wrap_content"
-           android:src="@drawable/hp_full"/>
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_x="205dp"
+            android:layout_y="145dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hp_full"/>
 
-       <ImageView
-           android:layout_width="140dp"
-           android:layout_x="20dp"
-           android:layout_y="42dp"
-           android:layout_height="wrap_content"
-           android:src="@drawable/hp_full"/>
-
-   </AbsoluteLayout>
->>>>>>> fa252c1fda1b93076e1d8ae4a4a01d4d98099cc1
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_x="20dp"
+            android:layout_y="42dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hp_full"/>
 
     </AbsoluteLayout>
 
+    <!--<GridLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="0.2"></GridLayout>-->
 
 
-</RelativeLayout>
+
+</LinearLayout>
