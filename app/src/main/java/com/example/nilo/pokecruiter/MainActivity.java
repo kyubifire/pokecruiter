@@ -1,9 +1,11 @@
 package com.example.nilo.pokecruiter;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView answer4;
     private TextView company_name;
     private ImageView userhpfull;
+    private TextView playerName;
 
     private String correctAnswer;
     private int currentHealth;
@@ -47,43 +50,73 @@ public class MainActivity extends AppCompatActivity {
         currentHealth = 100;
 
         player = (ImageView) findViewById(R.id.player);
+        Intent i = getIntent();
+        String gender = i.getStringExtra("Gender");
+
+        if(gender.equals("male")){
+            player.setImageResource(R.drawable.user_male);
+        }else{
+            player.setImageResource(R.drawable.user_female);
+        }
+
+
+
         enemy = (ImageView) findViewById(R.id.enemy);
+        Random rand = new Random();
+        int randomnum = rand.nextInt((3)) + 1;
+        Log.d("enemy gender", ""+randomnum);
+        if(randomnum == 1){
+            enemy.setImageResource(R.drawable.female);
+        }else{
+            enemy.setImageResource(R.drawable.male);
+        }
+
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
         userhpfull = (ImageView) findViewById(R.id.userhpfull);
 
+        playerName = (TextView) findViewById(R.id.player_name);
+        playerName.setText(i.getStringExtra("username"));
         answer1 = (TextView) findViewById(R.id.answer1);
         answer2 = (TextView) findViewById(R.id.answer2);
         answer3 = (TextView) findViewById(R.id.answer3);
         answer4 = (TextView) findViewById(R.id.answer4);
-
         company_name = (TextView) findViewById(R.id.company_name);
-        slideRight(player);
-        slideRight(enemy);
 
-        try {
-            readCompanyNames();
-            Random rand = new Random();
-            int randomnum = rand.nextInt((companyNames.length() + 1)) ;
-            company_name.setText((String) companyNames.get(randomnum));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        answer1.setText("A wild recruiter appears!");
 
-        try {
-            readQuestionAndAnswer();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                slideRight(player);
+                slideRight(enemy);
 
-        try {
-            showQuestionAndAnswer();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+                try {
+                    readCompanyNames();
+                    Random rand = new Random();
+                    int randomnum = rand.nextInt((companyNames.length() + 1)) ;
+                    company_name.setText((String) companyNames.get(randomnum));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    readQuestionAndAnswer();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    showQuestionAndAnswer();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 3000);
+
 
     }
 
@@ -141,10 +174,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showRightAnswerOnly() {
-        check(answer1);
-        check(answer2);
-        check(answer3);
-        check(answer4);
+        answer1.setText("The correct answer is:");
+        answer3.setText(correctAnswer);
+        answer4.setText("");
+        answer2.setText("");
     }
 
     private void check(TextView answer) {

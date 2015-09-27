@@ -26,7 +26,6 @@
                     android:layout_width= "match_parent"
                     android:layout_height= "wrap_content"
                     android:textColor="@android:color/white"
-                    android:text= "Loreectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coconsequat."
                     />
             </LinearLayout>
         </ScrollView>
@@ -59,7 +58,8 @@
             android:layout_x="55dp"
             android:layout_y="12dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/user_male"/>
+            android:src="@drawable/user_male"
+            android:visibility="invisible"/>
 
         <ImageView
             android:id="@+id/textbox"
@@ -75,7 +75,8 @@
             android:layout_x="247dp"
             android:layout_y="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/female"/>
+            android:src="@drawable/female"
+            android:visibility="invisible"/>
 
         <ImageView
             android:id="@+id/enemybubble"
@@ -116,7 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_x="25dp"
             android:layout_y="13dp"
-            android:text="Horowitz and her son"
+            android:text=""
             android:onClick="checkAnswer"/>
 
         <TextView
@@ -140,7 +141,6 @@
                android:id="@+id/answer1"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Something 1"
                android:onClick="checkAnswer"/>
            <TextView
                android:textSize="20dp"
@@ -149,7 +149,6 @@
                android:layout_height="wrap_content"
                android:layout_marginLeft="85dp"
                android:layout_toRightOf="@+id/answer1"
-               android:text="Something 2"
                android:onClick="checkAnswer"/>
            <TextView
                android:textSize="20dp"
@@ -158,7 +157,6 @@
                android:layout_height="wrap_content"
                android:layout_marginTop="12dp"
                android:layout_below="@+id/answer1"
-               android:text="Something 3"
                android:onClick="checkAnswer"/>
            <TextView
                android:textSize="20dp"
@@ -168,7 +166,6 @@
                android:layout_marginTop="12dp"
                android:layout_below="@+id/answer2"
                android:layout_alignLeft="@+id/answer2"
-               android:text="Something 4"
                android:onClick="checkAnswer"/>
 
 

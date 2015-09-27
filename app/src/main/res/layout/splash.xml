@@ -25,7 +25,8 @@
             android:layout_y = "90dp"
             android:layout_x="80dp"
             android:layout_height="100dp"
-            android:src="@drawable/user_male"/>
+            android:src="@drawable/user_male"
+            android:onClick="pickedCharacter"/>
 
         <ImageView
             android:layout_width="80dp"
@@ -33,7 +34,8 @@
             android:layout_y = "90dp"
             android:layout_x="200dp"
             android:layout_height="100dp"
-            android:src="@drawable/user_female"/>
+            android:src="@drawable/user_female"
+            android:onClick="pickedCharacter"/>
 
         <TextView
             android:textColor="@android:color/white"
@@ -52,7 +54,7 @@
             android:text="MALE"/>
 
         <TextView
-            android:id="@+id/pickchar"
+            android:id="@+id/namequestion"
             android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -61,12 +63,14 @@
             android:text="What is your name?"/>
 
         <EditText
+            android:id="@+id/etName"
             android:textColor="@android:color/white"
             android:layout_width= "wrap_content"
             android:layout_height="45dp"
             android:layout_x = "100dp"
             android:layout_y = "250dp"
-            android:text="INSERT NAME HERE"
+            android:hint="INSERT NAME HERE"
+            android:textColorHint="@android:color/white"
             android:inputType="text"/>
 
     </AbsoluteLayout>
