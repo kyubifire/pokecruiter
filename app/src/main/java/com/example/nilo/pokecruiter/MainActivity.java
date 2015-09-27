@@ -4,7 +4,6 @@ import android.content.res.AssetManager;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -20,19 +19,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Iterator;
-import java.util.concurrent.TimeUnit;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageView player;
     private ImageView enemy;
     private JSONObject jsonObject;
+    private JSONArray companyNames;
     private Iterator<?> questions;
     private TextView tvQuestion;
     private TextView answer1;
     private TextView answer2;
     private TextView answer3;
     private TextView answer4;
+    private TextView company_name;
     private ImageView userhpfull;
 
     private String correctAnswer;
@@ -55,9 +56,21 @@ public class MainActivity extends AppCompatActivity {
         answer3 = (TextView) findViewById(R.id.answer3);
         answer4 = (TextView) findViewById(R.id.answer4);
 
+        company_name = (TextView) findViewById(R.id.company_name);
         slideRight(player);
-
         slideRight(enemy);
+
+        try {
+            readCompanyNames();
+            Random rand = new Random();
+            int randomnum = rand.nextInt((companyNames.length() + 1)) ;
+            company_name.setText((String) companyNames.get(randomnum));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         try {
             readQuestionAndAnswer();
         } catch (IOException e) {
@@ -74,24 +87,73 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void readCompanyNames() throws IOException {
+        AssetManager am = getAssets();
+        InputStream is = am.open("CompanyNames.json");
+        BufferedReader bReader = new BufferedReader(new InputStreamReader(is));
+        StringBuilder builder = new StringBuilder();
+        String line;
+        while((line = bReader.readLine())!=null){
+            builder.append(line);
+        }
+
+        try {
+            companyNames = new JSONArray(builder.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void readQuestionAndAnswer()throws IOException  {
+        AssetManager am = getAssets();
+        InputStream is = am.open("datastructureQs.json");
+        BufferedReader bReader = new BufferedReader(new InputStreamReader(is));
+        StringBuilder builder = new StringBuilder();
+        String line;
+        while((line = bReader.readLine())!=null){
+            builder.append(line);
+        }
+
+        try {
+            jsonObject = new JSONObject(builder.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        questions = jsonObject.keys();
+    }
+
     public void checkAnswer(View v) throws IOException, JSONException {
         TextView tv = (TextView) v;
         if(tv.getText().equals(correctAnswer)){
-//            showSuperEffective();
-            resetState();
-            showQuestionAndAnswer();
+            showSuperEffective();
+//            resetState();
+//            showQuestionAndAnswer();
         }else{
             currentHealth -= 50;
             if(currentHealth > 0){
                 userhpfull.setImageResource(R.drawable.hp_half);
-                showNotEffective();
+                showNotEffective(false);
             }else{
                 userhpfull.setImageResource(R.drawable.hp_empty);
+                showNotEffective(true);
             }
         }
     }
 
-    private void showNotEffective() {
+    private void showRightAnswerOnly() {
+        check(answer1);
+        check(answer2);
+        check(answer3);
+        check(answer4);
+    }
+
+    private void check(TextView answer) {
+        if(!answer.getText().equals(correctAnswer)){
+            answer.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void showNotEffective(final boolean isHealthZero) {
         final String tempAnswer1 = answer1.getText().toString();
         final String tempAnswer2 = answer2.getText().toString();
         final String tempAnswer3 = answer3.getText().toString();
@@ -109,9 +171,12 @@ public class MainActivity extends AppCompatActivity {
                 answer2.setText(tempAnswer2);
                 answer3.setText(tempAnswer3);
                 answer4.setText(tempAnswer4);
+
+                if(isHealthZero){
+                    showRightAnswerOnly();
+                }
             }
         }, 2000);
-
     }
 
     private void showSuperEffective() {
@@ -143,23 +208,7 @@ public class MainActivity extends AppCompatActivity {
         answer4.setText("");
     }
 
-    private void readQuestionAndAnswer()throws IOException  {
-        AssetManager am = getAssets();
-        InputStream is = am.open("datastructureQs.json");
-        BufferedReader bReader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder builder = new StringBuilder();
-        String line;
-        while((line = bReader.readLine())!=null){
-            builder.append(line);
-        }
 
-        try {
-            jsonObject = new JSONObject(builder.toString());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        questions = jsonObject.keys();
-    }
 
     private void showQuestionAndAnswer() throws IOException, JSONException {
         if(questions.hasNext()){

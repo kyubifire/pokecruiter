@@ -109,13 +109,13 @@
             android:src="@drawable/hp_full"/>
 
         <TextView
-            android:textSize="16dp"
+            android:textSize="13dp"
             android:id="@+id/company_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="25dp"
             android:layout_y="13dp"
-            android:text="Company Name"
+            android:text="Horowitz and her son"
             android:onClick="checkAnswer"/>
 
         <TextView
@@ -172,7 +172,7 @@
 
 
        </RelativeLayout>
-        
+
     </AbsoluteLayout>
 
 </LinearLayout>
