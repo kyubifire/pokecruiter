@@ -70,11 +70,11 @@
 
         <ImageView
             android:id ="@+id/enemy"
-            android:layout_width="75dp"
-            android:layout_x="222dp"
-            android:layout_y="-50dp"
+            android:layout_width="40dp"
+            android:layout_x="247dp"
+            android:layout_y="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/enemy"/>
+            android:src="@drawable/Female"/>
 
         <ImageView
             android:id="@+id/enemybubble"
@@ -96,7 +96,7 @@
             android:id="@+id/userhpfull"
             android:layout_width="140dp"
             android:layout_x="205dp"
-            android:layout_y="125dp"
+            android:layout_y="135dp"
             android:layout_height="wrap_content"
             android:src="@drawable/hp_full"/>
 
@@ -104,11 +104,32 @@
             android:id="@+id/enemyhpfull"
             android:layout_width="140dp"
             android:layout_x="20dp"
-            android:layout_y="22dp"
+            android:layout_y="32dp"
             android:layout_height="wrap_content"
             android:src="@drawable/hp_full"/>
 
+        <TextView
+            android:textSize="16dp"
+            android:id="@+id/company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="25dp"
+            android:layout_y="13dp"
+            android:text="Company Name"
+            android:onClick="checkAnswer"/>
+
+        <TextView
+            android:textSize="16dp"
+            android:id="@+id/player_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="210dp"
+            android:layout_y="115dp"
+            android:text="Player Name"
+            android:onClick="checkAnswer"/>
+
        <RelativeLayout
+           android:id="@+id/answerholder"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_y = "177dp"
