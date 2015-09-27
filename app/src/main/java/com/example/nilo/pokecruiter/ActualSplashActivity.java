@@ -25,19 +25,16 @@ public class ActualSplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actual_splash);
         final RelativeLayout mainContainer = (RelativeLayout) findViewById(R.id.mainContainer);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mainContainer.setVisibility(View.GONE);
+                Intent i = new Intent(ActualSplashActivity.this, SplashActivity.class);
+                startActivity(i);
+            }
+        }, 25000);
 
-        mainContainer.animate()
-                .translationY(-5000)
-                .setDuration(20000)
-                .setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        super.onAnimationEnd(animation);
-                        mainContainer.setVisibility(View.GONE);
-                        Intent i = new Intent(ActualSplashActivity.this, SplashActivity.class);
-                        startActivity(i);
-                    }
-                });
     }
 
     Animation.AnimationListener animationSlideInLeftListener =
