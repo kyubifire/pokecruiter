@@ -1,6 +1,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@color/pokemonDarkGrey"
@@ -53,12 +54,12 @@
             android:src="@drawable/background_top"/>
 
         <ImageView
-            android:id ="@+id/player"
             android:layout_width="80dp"
+            android:id ="@+id/player"
             android:layout_x="55dp"
-            android:layout_y="10dp"
+            android:layout_y="12dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/usermale"/>
+            android:src="@drawable/user_male"/>
 
         <ImageView
             android:id="@+id/textbox"
