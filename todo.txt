@@ -25,3 +25,4 @@ Low Priority:
 -getting hit animation
 P-splash screen
 P-more questions
+-"A wild recruiter appears"
