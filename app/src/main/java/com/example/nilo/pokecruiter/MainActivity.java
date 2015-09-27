@@ -65,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void checkAnswer(View v){
+        
+    }
+
     private void readQuestionAndAnswer()throws IOException  {
         AssetManager am = getAssets();
         InputStream is = am.open("datastructureQs.json");
@@ -86,27 +90,28 @@ public class MainActivity extends AppCompatActivity {
     private void showQuestionAndAnswer() throws IOException, JSONException {
         if(questions.hasNext()){
             String question = (String) questions.next();
-            JSONArray answers = jsonObject.getJSONArray(question);
+            JSONArray possibleAnswers = jsonObject.getJSONArray(question);
 
             tvQuestion.setText(question);
 
-            for(int i = 0 ;i<answers.length()-1;i++){
+            for(int i = 0 ;i<possibleAnswers.length()-1;i++){
                 switch (i){
                     case 0:
-                        answer1.setText((String) answers.get(i));
+                        answer1.setText((String) possibleAnswers.get(i));
                         break;
                     case 1:
-                        answer2.setText((String) answers.get(i));
+                        answer2.setText((String) possibleAnswers.get(i));
                         break;
                     case 2:
-                        answer3.setText((String) answers.get(i));
+                        answer3.setText((String) possibleAnswers.get(i));
                         break;
                     case 3:
-                        answer4.setText((String) answers.get(i));
+                        answer4.setText((String) possibleAnswers.get(i));
                         break;
                 }
-
             }
+
+
 
 
         }
