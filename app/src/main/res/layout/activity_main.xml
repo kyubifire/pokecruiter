@@ -19,7 +19,8 @@
             android:scrollbars = "vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question"
+            android:textColor="@android:color/white"
+            android:text= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coconsequat."
             />
     </LinearLayout>
 
@@ -39,7 +40,7 @@
             android:id="@+id/battlebg"
             android:layout_width="match_parent"
             android:layout_x="0dp"
-            android:layout_y="-27dp"
+            android:layout_y="-45dp"
             android:layout_height="match_parent"
             android:src="@drawable/background_top"/>
 
@@ -47,7 +48,7 @@
             android:id ="@+id/player"
             android:layout_width="80dp"
             android:layout_x="55dp"
-            android:layout_y="30dp"
+            android:layout_y="10dp"
             android:layout_height="wrap_content"
             android:src="@drawable/user"/>
 
@@ -63,7 +64,7 @@
             android:id ="@+id/enemy"
             android:layout_width="75dp"
             android:layout_x="222dp"
-            android:layout_y="-40dp"
+            android:layout_y="-50dp"
             android:layout_height="wrap_content"
             android:src="@drawable/enemy"/>
 
@@ -71,7 +72,7 @@
             android:id="@+id/enemybubble"
             android:layout_width="170dp"
             android:layout_x="10dp"
-            android:layout_y="20dp"
+            android:layout_y="0dp"
             android:layout_height="wrap_content"
             android:src="@drawable/bubble_enemy"/>
 
@@ -79,7 +80,7 @@
             android:id="@+id/userbubble"
             android:layout_width="170dp"
             android:layout_x="185dp"
-            android:layout_y="115dp"
+            android:layout_y="95dp"
             android:layout_height="wrap_content"
             android:src="@drawable/bubble_user"/>
 
@@ -87,7 +88,7 @@
             android:id="@+id/userhpfull"
             android:layout_width="140dp"
             android:layout_x="205dp"
-            android:layout_y="145dp"
+            android:layout_y="125dp"
             android:layout_height="wrap_content"
             android:src="@drawable/hp_full"/>
 
@@ -95,12 +96,16 @@
             android:id="@+id/enemyhpfull"
             android:layout_width="140dp"
             android:layout_x="20dp"
-            android:layout_y="42dp"
+            android:layout_y="22dp"
             android:layout_height="wrap_content"
             android:src="@drawable/hp_full"/>
 
     </AbsoluteLayout>
 
+    <!--<RelativeLayout-->
+        <!--android:layout_width=""-->
+        <!--android:layout_height=""></RelativeLayout>-->
+    <!-- -->
     <!--<GridLayout-->
     <!--android:layout_width="match_parent"-->
     <!--android:layout_height="0dp"-->
