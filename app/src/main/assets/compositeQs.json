@@ -1,0 +1,80 @@
+{
+    "On which principle does stack work?":
+        ["FILO", "FIFO", "LILO", "LIFO or FILO", "LIFO or FILO"],
+    "Can linked list be implemented using arrays?":
+        ["Yes", "No", "Yes"],
+    "On which principle does queue work?":
+        ["FILO", "FIFO", "LILO", "FILO and FIFO", "FIFO"],
+    "AVL trees have a faster __________":
+        ["Insertion", "Deletion", "Updation", "Retrieval", "Retrieval"],
+    "The time required in best case for search operation in binary tree is":
+        ["O(n)", "O(log n)", "O(2n)", "O(log 2n)", "O(log n)"],
+    "Can stack be described as a pointer?":
+        ["Yes", "No", "Yes"],
+    "A tree cannot contain cycles.":
+        ["False", "True", "True"],
+    "Breadth First search is used in":
+        ["Binary trees", "Stacks", "Graphs", "Binary trees and Graphs", "Binary trees and Graphs"],
+    "In graphs, A hyperedge is an edge that is allowed to take on any number of _____________":
+        ["Vertices", "edges", "Vertices and edges", "labels", "edges"],
+    "An empty list is the one which has no":
+        ["nodes", "data", "nodes and data", "address", "nodes and data"],
+    "Key value pair is usually seen in":
+        ["Hash tables", "Heaps", "Hash tables and Heaps", "Skip list", "Hash tables"],
+    "In _____________tree, the heights of the two child subtrees of any node differ by at most one":
+        ["Binary tree", "Red black tree", "Splay tree", "AVL tree", "AVL tree"],
+    "(working in C) Can include files be nested?":
+        ["Yes", "No", "Yes"],
+    "(working in C) From which of the following libraries below, calloc() belongs to?":
+        ["stdlib.h", "malloc.h", "calloc.h", "stdlib.h and malloc.h", "stdlib.h and malloc.h"],
+    "(working in C) Exit() is same as return?":
+        ["Yes", "No", "No"],
+    "(working in C) Which of the following below is/are valid C keywords?":
+        ["integer", "int", "null", "integer and null", "int"],
+    "(working in C) What are the total number of keywords in C?":
+        ["30", "33", "32", "35", "32"],
+    "(working in C) rand() function returns a _value":
+        ["float", "any type", "integer", "float and integer", "integer"],
+    "(working in C) The compiler in C ignores all text from a _________ until then end of a line.":
+        ["/", "*/", "**", "//", "//"],
+    "(working in C) Which of the following operators cannot be overloaded?":
+        ["%", "::", "% and  ::", "+", "::"],
+    "(working in C) Which of the following operators below have the highest priority when evaulating?":
+        ["()", "[]", "*", "->", "()"],
+    "(working in C) ______________ is used to write formatted output with variable argument lists":
+        ["vfprintf", "vsprintf", "vprintf", "all of above", "all of above"],
+    "(working in C) Can getch() be used to echo the input?":
+        ["Yes", "No", "No"],
+    "(working in C) Is **p and &(*p) same?":
+        ["No", "Yes", "No"],
+    "(working in C) ___________ will immediately jump to the end of the current block of code":
+        ["continue", "exit", "goto", "break", "break"],
+    "(working in C) How is a logical AND represented in C?":
+        ["&&", "@@", "||", ".AND", "&&"],
+    "(working in C) int i = 2 * 3 + 4 * 5; ":
+        ["26", "22", "46", "50", "70", "26"],
+    "(working in C) Which one is used for moving blocks of binary data that are of arbitrary size and position in memory?":
+        ["strncpy()", "memcpy()", "memmove()", "strcpy()", "memset()", "memmove()"],
+    "(working in C) _________________ function to read a specified number of elements from a file.":
+        ["gets()", "fileread()", "readfile()", "fread()", "getline()", "fread()"],
+    "(working in C) What function should be used to release allocated memory which is no longer needed?":
+        ["free()", "dealloc()", "release()", "dropmem()", "unalloc()", "free()"],
+    "(working in C) int z,x=5,y=-10,a=4,b=2;":
+        ["10", "11", "12", "5", "6", "10"],
+    "(working in C) How do we delete a dynamically allocated array named `i`?":
+        ["delete [0]i;", "delete []i;", "delete i[0];", "delete i;", "delete i;"],
+    "(working in C) void main()":
+        ["cannot compile", "0", "Unexpected", "Runtime Error", "0"],
+    "(working in C) Output of the following program:":
+        ["7", "6", "5", "error", "5"],
+    "(working in C) How do we declare a float pointer?":
+        ["float *ptr;", "float ptr;", "*float ptr;", "None of the above", "float *ptr;"],
+    "(working in C) void main()":
+        ["666", "000", "555", "655", "555"],
+    "(working in C) What is the output of the following code?":
+        ["20..30", "20..20", "0", "Error", "20..20"],
+    "(working in C) What is the output of the following code?":
+        ["5 6 7 8 9 10", "1 2 3 4 5 6 7 8 9", "6 7 8 9 10", "5 6 7 8 9", "5 6 7 8 9 10"],
+    "(working in C) What is the output of the following code?":
+        ["26", "Error", "Z", "None of the above", "Z"]
+}

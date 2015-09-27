@@ -25,6 +25,7 @@
                     android:scrollbars = "vertical"
                     android:layout_width= "match_parent"
                     android:layout_height= "wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:textColor="@android:color/white"
                     />
             </LinearLayout>
@@ -147,7 +148,7 @@
                android:id="@+id/answer2"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:layout_marginLeft="85dp"
+               android:layout_marginLeft="100dp"
                android:layout_toRightOf="@+id/answer1"
                android:onClick="checkAnswer"/>
            <TextView
@@ -167,6 +168,17 @@
                android:layout_below="@+id/answer2"
                android:layout_alignLeft="@+id/answer2"
                android:onClick="checkAnswer"/>
+
+           <Button
+               android:id="@+id/continueButton"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Continue"
+               android:layout_alignParentRight="true"
+               android:layout_marginRight="40dp"
+               android:layout_marginTop="10dp"
+               android:onClick="continueToNextAnswer"
+               android:visibility="gone"/>
 
 
        </RelativeLayout>

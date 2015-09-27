@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String correctAnswer;
     private int currentHealth;
+    private Button continueButton;
 
     MediaPlayer mySound;
 
@@ -52,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        Intent svc=new Intent(this, BackgroundSoundService.class);
 //        startService(svc);
+
+        continueButton = (Button) findViewById(R.id.continueButton);
+
         mySound = MediaPlayer.create(this, R.raw.pokemonthemeacapella);
         mySound.start();
         currentHealth = 100;
@@ -146,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void readQuestionAndAnswer()throws IOException  {
         AssetManager am = getAssets();
-        InputStream is = am.open("datastructureQs.json");
+        InputStream is = am.open("compositeQs.json");
         BufferedReader bReader = new BufferedReader(new InputStreamReader(is));
         StringBuilder builder = new StringBuilder();
         String line;
@@ -166,20 +171,16 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) v;
         if(tv.getText().equals(correctAnswer)){
             showSuperEffective();
-//            resetState();
-//            showQuestionAndAnswer();
+            resetState();
+            showQuestionAndAnswer();
         }else{
             currentHealth -= 50;
             if(currentHealth > 0){
                 userhpfull.setImageResource(R.drawable.hp_half);
                 showNotEffective(false);
-                resetState();
-                showQuestionAndAnswer();
             }else{
                 userhpfull.setImageResource(R.drawable.hp_empty);
                 showNotEffective(true);
-                resetState();
-                showQuestionAndAnswer();
             }
         }
     }
@@ -218,24 +219,26 @@ public class MainActivity extends AppCompatActivity {
 
                 if(isHealthZero){
                     showRightAnswerOnly();
-
-                    Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            resetState();
-                            try {
-                                showQuestionAndAnswer();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    },2000);
+                    continueButton.setVisibility(View.VISIBLE);
                 }
             }
         }, 2000);
+    }
+
+    public void continueToNextAnswer(View v){
+        resetState();
+
+        try {
+            showQuestionAndAnswer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        continueButton.setVisibility(View.GONE);
+        currentHealth = 100;
+        userhpfull.setImageResource(R.drawable.hp_full);
     }
 
     private void showSuperEffective() {
@@ -248,16 +251,6 @@ public class MainActivity extends AppCompatActivity {
         answer2.setText("");
         answer3.setText("");
         answer4.setText("");
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                answer1.setText(tempAnswer1);
-                answer2.setText(tempAnswer2);
-                answer3.setText(tempAnswer3);
-                answer4.setText(tempAnswer4);
-            }
-        }, 2000);
     }
 
     private void resetState() {

@@ -3,23 +3,68 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green">
+    <RelativeLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pokecruiter_logo"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/sorryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Use headphone for optimal experience)"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:textSize="17sp"
+            android:layout_marginTop="-30dp"
+            />
+        <TextView
+            android:textColor="@android:color/white"
+            android:layout_below="@id/sorryText"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+			HackTX
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/pokecruiter_logo"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="(Use headphone for optimal experience)"
-        android:textColor="@android:color/white"
-        android:layout_below="@id/logo"
-        android:layout_centerHorizontal="true"
-        android:textSize="17sp"
-        android:layout_marginTop="-30dp"
-        />
+
+			Episode IV
+			Pokecruiter
+
+	It is not a period of civil war. Matter
+of fact, things are going prety well in the
+hackata region as a brave adventurer begins
+to explore the quite likely copywrite-infringing
+grasslands.
+
+	During this high paced adventure--statistically
+occuring during long lines, in bathrooms, and while
+avoiding conversation--our brave wanderer will encounter
+many recruiters, ready to hire.
+
+	The chosen one's success will depend on...
+
+	um....
+
+	uh oh. We ran out of time before we finished the
+opening scrawl. Fron, can you come over here? Frooon?
+Ugh, he's asleep. Whatever. I don't even think we have
+time to put this in.
+
+	Just play the game and practice interview questions,
+alright?
+
+	I'm out."/>
+    </RelativeLayout>
+
+
 
 
 </RelativeLayout>

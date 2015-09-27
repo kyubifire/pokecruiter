@@ -1,5 +1,7 @@
 package com.example.nilo.pokecruiter;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +9,7 @@ import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.RelativeLayout;
 
 import org.json.JSONException;
 
@@ -21,15 +24,20 @@ public class ActualSplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actual_splash);
+        final RelativeLayout mainContainer = (RelativeLayout) findViewById(R.id.mainContainer);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                Intent i = new Intent(ActualSplashActivity.this,SplashActivity.class);
-                startActivity(i);
-            }
-        }, 3000);
-
+        mainContainer.animate()
+                .translationY(-5000)
+                .setDuration(30000)
+                .setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        mainContainer.setVisibility(View.GONE);
+                        Intent i = new Intent(ActualSplashActivity.this, SplashActivity.class);
+                        startActivity(i);
+                    }
+                });
     }
 
     Animation.AnimationListener animationSlideInLeftListener =
