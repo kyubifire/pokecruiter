@@ -4,6 +4,14 @@ Pokecruiter is the new viral hit sweeping America's youth by force. The cloud-ba
 
 
 
+
+
+
+
+
+
+
+
 Just kidding! Here's what Pokecruiter is...
 
 An android app that poses CS interview questions styled as a pokemon battle.
