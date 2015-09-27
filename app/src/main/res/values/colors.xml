@@ -4,4 +4,6 @@
     <color name = "pokemonRed">#d04838</color>
     <color name = "pokemonDarkGrey">#484050</color>
     <color name = "pokemonOrange">#ff8000</color>
+    <color name = "green">#32cd32</color>
+
 </resources>

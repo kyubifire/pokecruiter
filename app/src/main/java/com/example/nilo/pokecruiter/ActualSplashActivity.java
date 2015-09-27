@@ -1,7 +1,52 @@
 package com.example.nilo.pokecruiter;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
+import org.json.JSONException;
+
+import java.io.IOException;
+import java.util.Random;
+
 /**
  * Created by fahrankamili on 9/27/15.
  */
-public class ActualSplashActivity {
+public class ActualSplashActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.actual_splash);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                Intent i = new Intent(ActualSplashActivity.this,SplashActivity.class);
+                startActivity(i);
+            }
+        }, 3000);
+
+    }
+
+    Animation.AnimationListener animationSlideInLeftListener =
+            new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            };
 }

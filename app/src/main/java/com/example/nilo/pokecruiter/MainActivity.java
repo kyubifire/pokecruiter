@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent svc=new Intent(this, BackgroundSoundService.class);
+        startService(svc);
+
         currentHealth = 100;
 
         player = (ImageView) findViewById(R.id.player);
