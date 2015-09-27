@@ -1,14 +1,31 @@
+#This script takes the question/answer pairs from the below website and parses
+#  them into a json
+
+# The last entry shouldn't print a comma, I've been removing it by hand
+
 from lxml import html
 import requests
+import json
 
-page = requests.get('http://www.careerride.com/test.aspx?type=Data-structure')
-tree = html.fromstring(page.text)
+f = open('datastructureQs.py', 'w')
+f.write("{\n")
 
-question = tree.xpath('//span[@class="question"]/text()')
-answers = tree.xpath('//label[@for="rblAnswer_0"]/text()')
-answers += tree.xpath('//label[@for="rblAnswer_1"]/text()')
-answers += tree.xpath('//label[@for="rblAnswer_2"]/text()')
-answers += tree.xpath('//label[@for="rblAnswer_3"]/text()')
+for i in range(1,21):
+	page = requests.get('http://www.careerride.com/question-' + str(i) + '-Data-structure')
+	tree = html.fromstring(page.text)
 
-print(question)
-print(answers)
+	question = tree.xpath('//span[@class="question"]/text()')
+	answers = tree.xpath('//span[@class="answer"]/text()')
+	answers = [x[3:] for x in answers]
+
+
+	for i, answer in enumerate(answers):
+		if answer == answers[-1][16:]:
+			answers += str(i)
+	del answers[-2]
+	answers = json.dumps(answers)
+	print(question)
+	print(answers)
+	f.write('    "' + str(question[0]) + '":\n        ' + str(answers) + ",\n")
+
+f.write("}")
