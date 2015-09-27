@@ -23,9 +23,13 @@ for i in range(1,21):
 	# 	if answer == answers[-1][16:]:
 	# 		answers += str(i)
 	# del answers[-2]
-	answers = json.dumps(answers)
 	print(question)
 	print(answers)
-	f.write('    "' + str(question[0]) + '":\n        ' + str(answers) + ",\n")
+	if len(max(answers, key=len)) <= 15:
+		answers = json.dumps(answers)
+		print("THIS IS GOING TO PRINT")
+		f.write('    "' + str(question[0]) + '":\n        ' + str(answers) + ",\n")
+	else:
+		print("8888888888")
 
 f.write("}")
