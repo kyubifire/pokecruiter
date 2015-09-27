@@ -58,7 +58,7 @@
             android:layout_x="55dp"
             android:layout_y="10dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/user"/>
+            android:src="@drawable/usermale"/>
 
         <ImageView
             android:id="@+id/textbox"
