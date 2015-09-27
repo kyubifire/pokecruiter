@@ -77,12 +77,12 @@ public class MainActivity extends AppCompatActivity {
     public void checkAnswer(View v) throws IOException, JSONException {
         TextView tv = (TextView) v;
         if(tv.getText().equals(correctAnswer)){
-            showSuperEffective();
+//            showSuperEffective();
             resetState();
+            showQuestionAndAnswer();
         }else{
             currentHealth -= 50;
             if(currentHealth > 0){
-                Log.d("Something","We get to currentHealth > 0");
                 userhpfull.setImageResource(R.drawable.hp_half);
                 showNotEffective();
             }else{
@@ -115,10 +115,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSuperEffective() {
+        final String tempAnswer1 = answer1.getText().toString();
+        final String tempAnswer2 = answer2.getText().toString();
+        final String tempAnswer3 = answer3.getText().toString();
+        final String tempAnswer4 = answer4.getText().toString();
+
         answer1.setText("Your answer was super effective.");
         answer2.setText("");
         answer3.setText("");
         answer4.setText("");
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                answer1.setText(tempAnswer1);
+                answer2.setText(tempAnswer2);
+                answer3.setText(tempAnswer3);
+                answer4.setText(tempAnswer4);
+            }
+        }, 2000);
     }
 
     private void resetState() {
