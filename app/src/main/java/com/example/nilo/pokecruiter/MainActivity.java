@@ -30,16 +30,22 @@ public class MainActivity extends AppCompatActivity {
     private TextView answer2;
     private TextView answer3;
     private TextView answer4;
+    private ImageView userhpfull;
+
+    private String correctAnswer;
+    private int currentHealth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        currentHealth = 100;
 
         player = (ImageView) findViewById(R.id.player);
         enemy = (ImageView) findViewById(R.id.enemy);
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
+        userhpfull = (ImageView) findViewById(R.id.userhpfull);
 
         answer1 = (TextView) findViewById(R.id.answer1);
         answer2 = (TextView) findViewById(R.id.answer2);
@@ -65,8 +71,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void checkAnswer(View v){
-        
+    public void checkAnswer(View v) throws IOException, JSONException {
+        TextView tv = (TextView) v;
+        if(tv.getText().equals(correctAnswer)){
+            resetState();
+            showQuestionAndAnswer();
+        }else{
+            currentHealth -= 50;
+            if(currentHealth > 0){
+                userhpfull.setImageResource(R.drawable.hp_half);
+            }else{
+                userhpfull.setImageResource(R.drawable.hp_empty);
+            }
+        }
+    }
+
+    private void resetState() {
+        answer1.setText("");
+        answer2.setText("");
+        answer3.setText("");
+        answer4.setText("");
     }
 
     private void readQuestionAndAnswer()throws IOException  {
@@ -111,9 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-
-
-
+            correctAnswer = (String) possibleAnswers.get(possibleAnswers.length()-1);
         }
     }
 
