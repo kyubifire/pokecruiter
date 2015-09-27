@@ -12,16 +12,24 @@
         android:orientation="vertical"
         android:layout_weight="0.5"
         android:padding="10dp">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id ="@+id/tvQuestion"
+                    android:maxLines = "256"
+                    android:scrollbars = "vertical"
+                    android:layout_width= "match_parent"
+                    android:layout_height= "wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text= "Loreectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coconsequat."
+                    />
+            </LinearLayout>
+        </ScrollView>
 
-        <TextView
-            android:id ="@+id/tvQuestion"
-            android:maxLines = "256"
-            android:scrollbars = "vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:text= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation   ullamco laboris nisi ut aliquip ex ea commodo coconsequat."
-            />
     </LinearLayout>
 
     <AbsoluteLayout
@@ -56,9 +64,9 @@
             android:id="@+id/textbox"
             android:layout_width="match_parent"
             android:layout_x="0dp"
-            android:layout_y="165dp"
+            android:layout_y="143dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/background_bottom"/>
+            android:src="@drawable/background_bottom_expanded"/>
 
         <ImageView
             android:id ="@+id/enemy"
@@ -100,17 +108,46 @@
             android:layout_height="wrap_content"
             android:src="@drawable/hp_full"/>
 
+       <RelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_y = "177dp"
+           android:layout_x = "22dp">
+           <TextView
+               android:textSize="20dp"
+               android:id="@+id/answer1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Something 1" />
+           <TextView
+               android:textSize="20dp"
+               android:id="@+id/answer2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="85dp"
+               android:layout_toRightOf="@+id/answer1"
+               android:text="Something 2" />
+           <TextView
+               android:textSize="20dp"
+               android:id="@+id/answer3"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:layout_below="@+id/answer1"
+               android:text="Something 3" />
+           <TextView
+               android:textSize="20dp"
+               android:id="@+id/answer4"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:layout_below="@+id/answer2"
+               android:layout_alignLeft="@+id/answer2"
+               android:text="Something 4" />
+
+
+       </RelativeLayout>
+        
     </AbsoluteLayout>
-
-    <!--<RelativeLayout-->
-        <!--android:layout_width=""-->
-        <!--android:layout_height=""></RelativeLayout>-->
-    <!-- -->
-    <!--<GridLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="0dp"-->
-    <!--android:layout_weight="0.2"></GridLayout>-->
-
-
 
 </LinearLayout>
