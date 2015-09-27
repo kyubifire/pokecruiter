@@ -1,7 +1,9 @@
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="@color/pokemonDarkGrey"
     android:weightSum="1">
 
     <LinearLayout
@@ -21,32 +23,88 @@
             />
     </LinearLayout>
 
-   <AbsoluteLayout
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_weight="0.5">
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:src="@drawable/battletemplate_empty"/>
 
-       <ImageView
-           android:layout_width="102dp"
-           android:layout_x="50dp"
-           android:layout_height="wrap_content"
-           android:src="@drawable/user"/>
 
-       <ImageView
-           android:layout_width=""
-           android:layout_height="" />
+        <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/battletemplate_empty"/>-->
 
-   </AbsoluteLayout>
+        <ImageView
+            android:id="@+id/battlebg"
+            android:layout_width="match_parent"
+            android:layout_x="0dp"
+            android:layout_y="-27dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_top"/>
+
+        <ImageView
+            android:id ="@+id/player"
+            android:layout_width="80dp"
+            android:layout_x="55dp"
+            android:layout_y="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user"/>
+
+        <ImageView
+            android:id="@+id/textbox"
+            android:layout_width="match_parent"
+            android:layout_x="0dp"
+            android:layout_y="165dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/background_bottom"/>
+
+        <ImageView
+            android:id ="@+id/enemy"
+            android:layout_width="75dp"
+            android:layout_x="222dp"
+            android:layout_y="-40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/enemy"/>
+
+        <ImageView
+            android:id="@+id/enemybubble"
+            android:layout_width="170dp"
+            android:layout_x="10dp"
+            android:layout_y="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bubble_enemy"/>
+
+        <ImageView
+            android:id="@+id/userbubble"
+            android:layout_width="170dp"
+            android:layout_x="185dp"
+            android:layout_y="115dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bubble_user"/>
+
+        <ImageView
+            android:id="@+id/userhpfull"
+            android:layout_width="140dp"
+            android:layout_x="205dp"
+            android:layout_y="145dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hp_full"/>
+
+        <ImageView
+            android:id="@+id/enemyhpfull"
+            android:layout_width="140dp"
+            android:layout_x="20dp"
+            android:layout_y="42dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hp_full"/>
+
+    </AbsoluteLayout>
 
     <!--<GridLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="0.2"></GridLayout>-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="0.2"></GridLayout>-->
 
 
 
