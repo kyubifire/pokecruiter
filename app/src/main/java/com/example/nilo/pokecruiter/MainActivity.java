@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
     private JSONObject jsonObject;
     private Iterator<?> questions;
     private TextView tvQuestion;
+    private TextView answer1;
+    private TextView answer2;
+    private TextView answer3;
+    private TextView answer4;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         player = (ImageView) findViewById(R.id.player);
         enemy = (ImageView) findViewById(R.id.enemy);
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
+
+        answer1 = (TextView) findViewById(R.id.answer1);
+        answer2 = (TextView) findViewById(R.id.answer2);
+        answer3 = (TextView) findViewById(R.id.answer3);
+        answer4 = (TextView) findViewById(R.id.answer4);
 
         slideRight(player);
 
@@ -78,6 +89,24 @@ public class MainActivity extends AppCompatActivity {
             JSONArray answers = jsonObject.getJSONArray(question);
 
             tvQuestion.setText(question);
+
+            for(int i = 0 ;i<answers.length()-1;i++){
+                switch (i){
+                    case 0:
+                        answer1.setText((String) answers.get(i));
+                        break;
+                    case 1:
+                        answer2.setText((String) answers.get(i));
+                        break;
+                    case 2:
+                        answer3.setText((String) answers.get(i));
+                        break;
+                    case 3:
+                        answer4.setText((String) answers.get(i));
+                        break;
+                }
+
+            }
 
 
         }
