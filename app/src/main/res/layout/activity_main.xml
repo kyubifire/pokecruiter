@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_weight=".4"
+        android:layout_weight="0.5"
         android:padding="10dp">
 
         <TextView
@@ -24,13 +24,29 @@
    <AbsoluteLayout
        android:layout_width="match_parent"
        android:layout_height="0dp"
-       android:layout_weight=".3">
+       android:layout_weight="0.5">
+
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:src="@drawable/battletemplate_empty"/>
+
+       <ImageView
+           android:layout_width="102dp"
+           android:layout_x="50dp"
+           android:layout_height="wrap_content"
+           android:src="@drawable/user"/>
+
+       <ImageView
+           android:layout_width=""
+           android:layout_height="" />
+
    </AbsoluteLayout>
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".3"></GridLayout>
+    <!--<GridLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="0.2"></GridLayout>-->
 
 
 
