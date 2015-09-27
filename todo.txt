@@ -11,11 +11,11 @@ Pokecruiter To Do:
 
 
 High Priority:
--take user name
--display enemy name
--intro screen
+-take user name (in progress)
+-display enemy name (check)
+-intro screen (in progress)
 -audio
--giving answer if missed
+-giving answer if missed (check, needs little tweak)
 
 
 Low Priority:
